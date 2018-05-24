@@ -2,6 +2,9 @@ version: '{build}'
 
 configuration: Release
 
+install:
+ - nuget restore libWindBot.sln
+
 build: 
     project: libWindBot.sln
     parallel: true
