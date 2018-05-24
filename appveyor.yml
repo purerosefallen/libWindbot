@@ -8,13 +8,17 @@ environment:
 configuration: Release
 
 install:
-  - curl --retry 5 --connect-timeout 30 --location --remote-header-name --remote-name https://dl.google.com/android/repository/android-ndk-r10e-windows-x86_64.zip
-  - 7z x -y -oC:\ProgramData\Microsoft\AndroidNDK android-ndk-r10e-windows-x86_64.zip
+  # - curl --retry 5 --connect-timeout 30 --location --remote-header-name --remote-name https://dl.google.com/android/repository/android-ndk-r10e-windows-x86_64.zip
+  # - 7z x -y -oC:\ProgramData\Microsoft\AndroidNDK android-ndk-r10e-windows-x86_64.zip
   # - mv -f android-ndk-r10e C:\ProgramData\Microsoft\AndroidNDK
 
   - echo y | "%ANDROID_HOME%\tools\android" update sdk --no-ui --all --filter "platform-tools"
   - echo y | "%ANDROID_HOME%\tools\android" update sdk --no-ui --all --filter "tools"
   - echo y | "%ANDROID_HOME%\tools\android" update sdk --no-ui --all --filter "android-25"
+
+  - echo y | "C:\ProgramData\Microsoft\AndroidNDK\android-ndk-r10e\tools\android" update sdk --no-ui --all --filter "platform-tools"
+  - echo y | "C:\ProgramData\Microsoft\AndroidNDK\android-ndk-r10e\tools\android" update sdk --no-ui --all --filter "tools"
+  - echo y | "C:\ProgramData\Microsoft\AndroidNDK\android-ndk-r10e\tools\android" update sdk --no-ui --all --filter "android-23"
 
   - nuget install Embeddinator-4000
 
