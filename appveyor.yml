@@ -3,7 +3,8 @@ version: '{build}'
 configuration: Release
 
 install:
- - nuget restore libWindBot.sln
+ - nuget install Xamarin
+ - nuget install Embeddinator-4000
 
 build: 
     project: libWindBot.sln
