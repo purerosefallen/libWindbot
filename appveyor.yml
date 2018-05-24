@@ -12,7 +12,7 @@ install:
   # - 7z x -oandroid-sdk tools_r25.2.5-windows.zip
   # - mv -f android-sdk "C:\Program Files (x86)\Android"
 
-  - echo y | "%ANDROID_HOME%\tools\android" update sdk --no-ui --all --filter "android-26"
+  - echo y | "%ANDROID_HOME%\tools\android" update sdk --no-ui --all --filter "android-27"
 
   - nuget install Embeddinator-4000
 
