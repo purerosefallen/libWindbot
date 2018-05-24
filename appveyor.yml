@@ -8,9 +8,9 @@ environment:
 configuration: Release
 
 install:
-  - curl --retry 5 --connect-timeout 30 --location --remote-header-name --remote-name https://dl.google.com/android/repository/tools_r25.2.5-windows.zip
-  - 7z x -oandroid-sdk tools_r25.2.5-windows.zip
-  - mv -f android-sdk "C:\Program Files (x86)\Android"
+  # - curl --retry 5 --connect-timeout 30 --location --remote-header-name --remote-name https://dl.google.com/android/repository/tools_r25.2.5-windows.zip
+  # - 7z x -oandroid-sdk tools_r25.2.5-windows.zip
+  # - mv -f android-sdk "C:\Program Files (x86)\Android"
 
   - echo y | %ANDROID_HOME%\tools\android update sdk --no-ui --all --filter "android-25"
 
