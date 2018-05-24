@@ -1,9 +1,17 @@
 version: '{build}'
+skip_tags: true
+
+environment:
+  ANDROID_HOME: C:\android-sdk 
+  JAVA_HOME: C:\Program Files\Java\jdk1.8.0
 
 configuration: Release
 
 install:
- - # nuget install Xamarin
+  - mkdir %ANDROID_HOME%
+  - curl --retry 5 --connect-timeout 30 --location --remote-header-name --remote-name https://dl.google.com/android/repository/tools_r25.2.5-windows.zip
+  - 7z x -o%ANDROID_HOME% tools_r25.2.5-windows.zip
+
  - nuget install Embeddinator-4000
 
 build: 
@@ -13,7 +21,7 @@ build:
 test: off
 
 artifacts:
-  - path: bin/Release/*
+  - path: output/*
     name: libWindBot
 
 deploy:
