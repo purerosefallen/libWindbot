@@ -1,0 +1,24 @@
+version: '{build}'
+
+platform: x86
+configuration: Release
+
+build: 
+    project: libWindBot.sln
+    parallel: true
+
+test: off
+
+artifacts:
+  - path: bin/Release/*
+    name: libWindBot
+
+deploy:
+  release: latest
+  description: 'Automatic build commit $(APPVEYOR_REPO_COMMIT) $(APPVEYOR_REPO_COMMIT_TIMESTAMP)'
+  provider: GitHub
+  force_update: true
+  auth_token:
+    secure: EQ9miMjfX/QAoBvgc6D+JLmHatLyxOEKZ/uo68QijxWW5Gp4MzB/pOH9+u2GlDVO
+  on:
+    branch: master
