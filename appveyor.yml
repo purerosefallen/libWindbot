@@ -8,7 +8,7 @@ environment:
 configuration: Release
 
 install:
-  - mkdir -p %ANDROID_HOME%
+  - bash -c "mkdir -p %ANDROID_HOME%"
   - curl --retry 5 --connect-timeout 30 --location --remote-header-name --remote-name https://dl.google.com/android/repository/tools_r25.2.5-windows.zip
   - 7z x -o%ANDROID_HOME% tools_r25.2.5-windows.zip
 
